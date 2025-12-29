@@ -97,7 +97,7 @@ public class JdkLoggingClient {
 
   /** Say hello to server. */
   public void greet(String name) {
-    logger.info("Will try to greet " + name + " ...");
+    logger.log(Level.INFO, "Will try to greet {0} ...", name);
     HelloRequest request = HelloRequest.newBuilder().setName(name).build();
     HelloReply response;
     try {
@@ -106,7 +106,7 @@ public class JdkLoggingClient {
       logger.log(Level.WARNING, "RPC failed: {0}", e.getStatus());
       return;
     }
-    logger.info("Greeting: " + response.getMessage());
+    logger.log(Level.INFO, "Greeting: {0}", response.getMessage());
   }
 
   /**
