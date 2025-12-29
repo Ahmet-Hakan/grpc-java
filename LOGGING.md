@@ -1,5 +1,7 @@
 # gRPC-Java Logging Configuration
 
+> **Quick Start**: If you just want to know how to set JDK logging in your project, see [LOGGING-QUICKSTART.md](LOGGING-QUICKSTART.md).
+
 ## Overview
 
 gRPC-Java uses `java.util.logging` (JDK logging) as its primary logging framework. However, when using different transport implementations, additional configuration may be needed to ensure consistent logging behavior.
