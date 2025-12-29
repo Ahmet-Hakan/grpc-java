@@ -23,13 +23,13 @@ Then run the logging client:
 You should see log output similar to:
 
 ```
-Dec 29, 2024 12:00:00 PM io.grpc.examples.logging.JdkLoggingClient configureLogging
+MMM DD, YYYY HH:MM:SS AM io.grpc.examples.logging.JdkLoggingClient configureLogging
 INFO: JDK logging configured successfully
-Dec 29, 2024 12:00:00 PM io.grpc.examples.logging.JdkLoggingClient configureLogging
+MMM DD, YYYY HH:MM:SS AM io.grpc.examples.logging.JdkLoggingClient configureLogging
 INFO: Netty logger factory: JDK
-Dec 29, 2024 12:00:00 PM io.grpc.examples.logging.JdkLoggingClient greet
+MMM DD, YYYY HH:MM:SS AM io.grpc.examples.logging.JdkLoggingClient greet
 INFO: Will try to greet world ...
-Dec 29, 2024 12:00:00 PM io.grpc.examples.logging.JdkLoggingClient greet
+MMM DD, YYYY HH:MM:SS AM io.grpc.examples.logging.JdkLoggingClient greet
 INFO: Greeting: Hello world
 ```
 
