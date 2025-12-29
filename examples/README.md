@@ -35,6 +35,8 @@ before trying out the examples.
 
 - [Keep Alive](src/main/java/io/grpc/examples/keepalive)
 
+- [JDK Logging Configuration](src/main/java/io/grpc/examples/logging)
+
 - [Cancellation](src/main/java/io/grpc/examples/cancellation)
 
 - [Custom Load Balance](src/main/java/io/grpc/examples/customloadbalance)
