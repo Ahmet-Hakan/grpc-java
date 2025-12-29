@@ -223,6 +223,23 @@ to check for usages of `@ExperimentalApi` and `@Internal` in any library code
 that depends on gRPC. It may also be used to check for `@Internal` usage or
 unintended `@ExperimentalApi` consumption in non-library code.
 
+Logging Configuration
+---------------------
+
+gRPC-Java uses `java.util.logging` (JDK logging) by default. When using the Netty
+transport, you may need to explicitly configure it to use JDK logging if other
+logging frameworks (SLF4J, Log4J) are on your classpath.
+
+See the [logging configuration guide](LOGGING.md) for detailed instructions on:
+- Forcing JDK logging when using gRPC as a dependency
+- Configuring logging levels
+- Troubleshooting logging issues
+
+Quick start: Set the system property to force JDK logging:
+```bash
+-Dio.netty.logger.type=JDK
+```
+
 How to Build
 ------------
 
