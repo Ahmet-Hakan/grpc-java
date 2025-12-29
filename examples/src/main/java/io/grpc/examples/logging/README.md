@@ -83,11 +83,11 @@ java -Djava.util.logging.config.file=logging.properties -jar your-app.jar
 
 gRPC uses these log levels:
 
-- **FINE**: Error and warning messages
+- **FINE**: Error and warning messages from gRPC internal components
 - **FINER**: Informational messages
 - **FINEST**: Debug messages
 
-Set the level to `FINE` or lower to see gRPC internal debug information.
+Note: Most gRPC logs are at FINE level or below to avoid cluttering production logs. Set the level to `FINE` or lower to see gRPC internal debug information.
 
 ## Verifying Configuration
 

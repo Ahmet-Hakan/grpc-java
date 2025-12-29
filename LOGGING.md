@@ -132,14 +132,14 @@ run {
 
 gRPC uses the following log level conventions:
 
-| gRPC Log Level | Java Logging Level | Use Case |
-|----------------|-------------------|----------|
-| ERROR          | FINE              | Error conditions (not exceptions) |
-| WARNING        | FINE              | Warning conditions |
-| INFO           | FINER             | Informational messages |
-| DEBUG          | FINEST            | Debug-level messages |
+| gRPC Internal Level | Java Logging Level | Use Case |
+|---------------------|-------------------|----------|
+| ERROR               | FINE              | Error conditions within gRPC components |
+| WARNING             | FINE              | Warning conditions within gRPC components |
+| INFO                | FINER             | Informational messages |
+| DEBUG               | FINEST            | Debug-level messages |
 
-Most gRPC logs are at FINE level or below to avoid cluttering production logs. To see gRPC debug information, set the log level to FINE or lower.
+**Note**: Both ERROR and WARNING levels map to Java's FINE level. This is intentional - gRPC keeps most of its logging at or below FINE to avoid cluttering production logs. These are internal diagnostic messages, not application-level errors. To see gRPC debug information, set the log level to FINE or lower.
 
 ## Troubleshooting
 

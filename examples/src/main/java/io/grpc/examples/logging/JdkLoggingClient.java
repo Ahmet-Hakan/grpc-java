@@ -53,18 +53,25 @@ public class JdkLoggingClient {
   /**
    * Configure JDK logging to show gRPC debug messages.
    * In production, you would typically use a logging.properties file instead.
+   * 
+   * Note: This adds a handler to the root logger. If you already have handlers
+   * configured, you may see duplicate log entries. In that case, either remove
+   * existing handlers or skip adding a new one.
    */
   private static void configureLogging() {
     // Get the root logger
     Logger rootLogger = Logger.getLogger("");
     
-    // Create a console handler with appropriate level
-    ConsoleHandler handler = new ConsoleHandler();
-    handler.setLevel(Level.ALL);
-    handler.setFormatter(new SimpleFormatter());
-    
-    // Add handler to root logger
-    rootLogger.addHandler(handler);
+    // Only add handler if none exist to avoid duplicates
+    if (rootLogger.getHandlers().length == 0) {
+      // Create a console handler with appropriate level
+      ConsoleHandler handler = new ConsoleHandler();
+      handler.setLevel(Level.ALL);
+      handler.setFormatter(new SimpleFormatter());
+      
+      // Add handler to root logger
+      rootLogger.addHandler(handler);
+    }
     rootLogger.setLevel(Level.INFO);
     
     // Set gRPC package to FINE to see debug logs
