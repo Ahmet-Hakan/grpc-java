@@ -16,7 +16,9 @@ gRPC-Java uses `java.util.logging` (JDK logging) as its primary logging framewor
 
 If you want to ensure that JDK logging is used even when SLF4J or Log4J is on your classpath, you have two options:
 
-### Option 1: System Property (Recommended for external usage)
+### Option 1: System Property (Recommended)
+
+**This is the recommended approach** as it doesn't depend on internal Netty APIs.
 
 Set the following system property before your application starts or when starting the JVM:
 
@@ -30,7 +32,9 @@ Or programmatically before any gRPC code is executed:
 System.setProperty("io.netty.logger.type", "JDK");
 ```
 
-### Option 2: Programmatic Configuration
+### Option 2: Programmatic Configuration (Advanced)
+
+**Note**: This approach uses Netty's internal APIs which may change without notice. Use the system property approach (Option 1) unless you have specific requirements.
 
 Set the logger factory programmatically before creating any gRPC channels or servers:
 
